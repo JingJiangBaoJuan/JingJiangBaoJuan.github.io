@@ -329,6 +329,27 @@
     .gallery img:last-child {
         grid-column: 2; /* 让最后一张居中 */
     }
+
+    .gallery1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-auto-rows: 10px;
+            gap: 15px;
+            max-width: 90vw;
+        }
+        .gallery1 img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery1 img:hover {
+            transform: scale(1.05);
+        }
+        /* 瀑布流效果 */
+        .gallery-item {
+            grid-row: span var(--rows);
+        }
 </style>
 
 <main class="content">
@@ -352,19 +373,17 @@
                     <img src="https://picx.zhimg.com/80/v2-30799a5cd3bcfbe518da9c74f0910573_720w.webp?source=d16d100b" alt="图片4">
                     <img src="https://picx.zhimg.com/80/v2-30799a5cd3bcfbe518da9c74f0910573_720w.webp?source=d16d100b" alt="图片5">
                 </div>
+                <div class="gallery1">
+                    <img src="https://pic1.zhimg.com/v2-edc06e2364031c8c11483ab643b1da35_720w.jpg?source=d16d100b" class="gallery-item" style="--rows: 30;" alt="图片1">
+                    <img src="https://pic1.zhimg.com/v2-edc06e2364031c8c11483ab643b1da35_720w.jpg?source=d16d100b" class="gallery-item" style="--rows: 40;" alt="图片2">
+                    <img src="https://pic1.zhimg.com/v2-edc06e2364031c8c11483ab643b1da35_720w.jpg?source=d16d100b" class="gallery-item" style="--rows: 35;" alt="图片3">
+                    <img src="https://pic1.zhimg.com/v2-edc06e2364031c8c11483ab643b1da35_720w.jpg?source=d16d100b" class="gallery-item" style="--rows: 50;" alt="图片4">
+                    <img src="https://pic1.zhimg.com/v2-edc06e2364031c8c11483ab643b1da35_720w.jpg?source=d16d100b" class="gallery-item" style="--rows: 45;" alt="图片5">
+                </div>
             </div>
         </div>
     </div>
 </main>
-<!-- <body>
-    <div class="gallery">
-        <img src="img1.jpg" class="gallery-item" style="--rows: 30;" alt="图片1">
-        <img src="img2.jpg" class="gallery-item" style="--rows: 40;" alt="图片2">
-        <img src="img3.jpg" class="gallery-item" style="--rows: 35;" alt="图片3">
-        <img src="img4.jpg" class="gallery-item" style="--rows: 50;" alt="图片4">
-        <img src="img5.jpg" class="gallery-item" style="--rows: 45;" alt="图片5">
-    </div>
-</body> -->
 
 <!-- https://picx.zhimg.com/v2-2bdd3b1b695d3a8d5df96ab868bca3fc_720w.jpg?source=d16d100b
 https://pic1.zhimg.com/v2-edc06e2364031c8c11483ab643b1da35_720w.jpg?source=d16d100b
