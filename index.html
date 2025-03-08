@@ -463,30 +463,105 @@
             <div class="card">
                 <div class="card-content">
                     
-                        <div class="dream">
+                        <style>
+    #text_dream {
+        font-size: 16px;
+    }
+    .row_dream_bottom {
+        display: flex;
+        justify-content: center;/* 水平居中 */
+        align-items: center;    /* 垂直居中（可选） */
+        height: 100px;          /* 可根据需求调整 */
+    }
+
+    .button_dream {
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 17px;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #e4636e;
+        color: ghostwhite;
+    }
+    .button_dream span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+    }
+    .button_dream:hover span {
+        /* color: black; */
+        color: white;
+    }
+    .button_dream::before,
+    .button_dream::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    .button_dream::before {
+        content: "";
+        /* background: #000; */
+        background: #b52f5d;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    .button_dream:hover::before {
+        transform: translate3d(100%, 0, 0);
+    }
+
+</style>
+<div class="dream">
     
     <div class="title center-align">
         <i class="far fa-lightbulb"></i>&nbsp;&nbsp;简介
     </div>
     
     <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text" id = "text_dream">
             靖江宝卷自成系统，分为“圣卷”（又称“正卷”）、“草卷”（又称“小卷”）和“科仪卷”。“圣卷”是靖江最富特色的宝卷，都是神佛故事，贯穿因果报应，劝人行善积德。“草卷”和“科仪卷”分别是历史传说、民间故事和用于做会仪式的宝卷。
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            <br>
             靖江讲经是靖江民间的传统文化活动，其渊源可上溯到三国两晋南北朝时期传扬佛经的梵呗和唱导。讲经的基本形式为说唱结合，一唱众和，唱腔有平调、单调、含十字、滚龙调、挂金锁、打莲花等。往往由一名佛头、两名客师主讲，讲经动情处，听众与主讲者一起和唱，往往一连几天通宵达旦。
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            <br>
             靖江讲经是与做会结合在一起的。靖江民间做会的项目繁多，按做会的性质划分有“庙会”、“公会”、“私会”三种；按其信奉的神佛命名，有“观音会”、“大圣会”、“三茅会”、“梓潼会”、“地藏会”、“土地会”、“雷祖会”、“庚申会”、“城隍会”等名目，统称“龙华盛会”或“太平盛会”。讲经就是在做会中讲唱宝卷，故称“做会讲经”。
         </div>
     </div>
+    <div class="row">
+        <div class="row_dream_bottom">
+            <button class="button_dream" onclick="changeFontSize(2)"><span>增大字体</span></button>
+            <button class="button_dream" onclick="changeFontSize(-2)"><span>减小字体</span></button>
+        </div>
+    </div>
 </div>
+
+<script>
+    function changeFontSize(sizeChange) {
+        let textElement = document.getElementById("text_dream");
+        let currentSize = parseInt(window.getComputedStyle(textElement).fontSize);
+        // textElement.style.fontSize = (currentSize + sizeChange) + "px";
+        let newSize = currentSize + sizeChange;
+
+        if (newSize >= 10 && newSize <= 50) {
+            // 限制最小 10px，最大 50px
+            textElement.style.fontSize = newSize + "px";
+        }
+    }
+</script>
+
 
                     
 
@@ -563,20 +638,20 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2025/01/14/shengjuan/8/">
+                    <a href="/2025/01/14/shengjuan/7/">
                         <div class="card-image">
                             
                             
-                            <img src="https://pic4.zhimg.com/v2-95ea042be75c28794ddca649388ad3c7_b.jpg" class="responsive-img" alt="药王宝卷">
+                            <img src="https://pic1.zhimg.com/v2-a88c2a1cc175f75b8b60f3224026b4de_b.jpg" class="responsive-img" alt="月宫宝卷">
                             
-                            <span class="card-title">药王宝卷</span>
+                            <span class="card-title">月宫宝卷</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                圣卷：《药王宝卷》
+                                圣卷：《月宫宝卷》
                             
                         </div>
                         <div class="publish-info">
@@ -610,20 +685,20 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2025/01/14/shengjuan/7/">
+                    <a href="/2025/01/14/shengjuan/8/">
                         <div class="card-image">
                             
                             
-                            <img src="https://pic1.zhimg.com/v2-a88c2a1cc175f75b8b60f3224026b4de_b.jpg" class="responsive-img" alt="月宫宝卷">
+                            <img src="https://pic4.zhimg.com/v2-95ea042be75c28794ddca649388ad3c7_b.jpg" class="responsive-img" alt="药王宝卷">
                             
-                            <span class="card-title">月宫宝卷</span>
+                            <span class="card-title">药王宝卷</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                圣卷：《月宫宝卷》
+                                圣卷：《药王宝卷》
                             
                         </div>
                         <div class="publish-info">
@@ -751,20 +826,20 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2025/01/14/shengjuan/4/">
+                    <a href="/2025/01/14/shengjuan/3/">
                         <div class="card-image">
                             
                             
-                            <img src="https://picx.zhimg.com/v2-6d9136c0bf542e136dd70a6a7c97521b_b.jpg" class="responsive-img" alt="梓潼宝卷（上册•龙宫招亲）">
+                            <img src="https://pic1.zhimg.com/v2-677c90f32232dd162b9c504ff176b100_b.jpg" class="responsive-img" alt="香山观世音宝卷">
                             
-                            <span class="card-title">梓潼宝卷（上册•龙宫招亲）</span>
+                            <span class="card-title">香山观世音宝卷</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                圣卷：《梓潼宝卷》（上册•龙宫招亲）
+                                圣卷：《香山观世音宝卷》
                             
                         </div>
                         <div class="publish-info">
